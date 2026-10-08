@@ -1,0 +1,90 @@
+/* The Guardian × Spotify: a dark version of the shared template. Black page, white text,
+   Paul's own type (DM Serif Text headings, DM Sans text). Accent is Spotify green #1ed760 (10.8:1 on black). */
+@font-face { font-family: 'Mulish'; src: url('fonts/dm-serif-text.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Lato'; src: url('fonts/dm-sans.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+:root { --paper: #0a0a0b; --ink: #f2f2f2; --ink-soft: #b4b4b8; --navy: #ffffff; --accent: #1ed760; --tint: #17171a; --line: #2c2c31; }
+html { background: var(--paper); color-scheme: dark; }
+body { background: var(--paper); color: var(--ink); }
+body, p, li, figcaption, dt, dd, .eyebrow, .foot-links, .slide-caption span { font-family: 'DM Sans', Arial, sans-serif; }
+h1, h2, h3, .stat b, .slide-caption strong { font-family: 'DM Serif Text', Georgia, serif; font-weight: 400; color: var(--navy); }
+.intro h1 { max-width: none; }
+a, .top .back, .foot-links a { color: var(--accent); }
+.skip { background: #000; color: var(--accent); }
+
+/* Top bar on black. */
+.top { background: rgba(10,10,11,.9); border-bottom-color: var(--line); }
+.top a, .top .brand span { color: var(--ink); }
+.top .brand small { color: var(--ink-soft); }
+
+/* Stats and meta. */
+.stat { border-top-color: var(--ink) !important; }
+.meta dt { color: var(--ink); }
+
+/* Images sit on black: no white frames. */
+.wide img, .detail img { box-shadow: 0 0 0 1px var(--line); }
+.bleed { background: var(--paper); }
+
+/* Carousels on dark panels. */
+.carousel-track { background: transparent !important; }
+.carousel-screens .slide { --slide-bg: var(--tint); background: var(--tint); }
+.carousel-screens .slide-media img { border-color: #3a3a40; background: #000; }
+.carousel-steps .slide { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--paper); }
+.carousel-steps .slide-media img { border-radius: 0; box-shadow: none; }
+.carousel-steps .slide-caption, .slide-caption { background: var(--tint) !important; color: var(--ink); border-top: 0; border-radius: 0; }
+.slide-caption strong { color: var(--navy); font-size: clamp(20px, 1.7vw, 22px); line-height: 1.25; margin-bottom: 6px; }
+.slide-caption span { color: var(--ink-soft); }
+.carousel-controls, .carousel-count { color: var(--ink-soft); }
+.carousel-controls button { background: transparent; color: var(--ink); border-color: #55555c; }
+.carousel-controls button:disabled { color: #6b6b72; border-color: #33333a; }
+
+/* Lightbox stays dark. */
+.lightbox { background: rgba(0,0,0,.92); }
+
+/* Results: the top five genres. */
+.rank-title { margin: 28px 0 8px !important; font-size: var(--fs-label); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.rank { list-style: none; margin: 0; padding: 0; counter-reset: r; }
+.rank li { counter-increment: r; display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--line); font-family: 'DM Serif Text', Georgia, serif; font-size: clamp(22px, 2.4vw, 28px); color: var(--ink); }
+.rank li::before { content: counter(r, decimal-leading-zero); font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: var(--accent); }
+
+/* Footer. */
+.foot { border-top-color: var(--line); }
+/* Lines and caption titles on black. */
+.intro, .bleed, .stats { border-color: var(--line) !important; }
+.carousel-steps .slide-caption strong, .carousel-screens .slide-caption strong { font-family: 'DM Serif Text', Georgia, serif !important; font-weight: 400 !important; }
+/* Flow label above each screen title, as on Vodafone. */
+.slide-caption .slide-project { display: block; margin-bottom: 8px; font-size: var(--fs-label); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.text b { color: var(--navy); }
+.wide img[src$="footprints.jpg"] { box-shadow: none; border-radius: 0; }
+
+/* Hero: the campaign logo centred, cycling through four people's colour combos. */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.logo-hero { padding: clamp(56px, 9vw, 120px) var(--gutter) clamp(28px, 4vw, 48px); text-align: center; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: clamp(40px, 5vw, 64px); }
+.logo-stage { max-width: 820px; margin: 0 auto; }
+.hero-logo { display: block; width: 100%; height: auto; }
+.hero-logo path { transition: fill .7s ease; }
+@media (prefers-reduced-motion: reduce) { .hero-logo path { transition: none; } }
+.logo-pips { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: clamp(32px, 4vw, 48px); }
+.pip { width: 14px; height: 14px; padding: 0; border: 0; border-radius: 999px; background: #3a3a40; cursor: pointer; transition: width .3s ease, background .3s ease; position: relative; }
+.pip::after { content: ''; position: absolute; inset: -15px; }
+.pip[aria-pressed="true"] { width: 44px; background: #f2f0ea; }
+.pip-pause { margin-left: 10px; font: inherit; font-size: 14px; font-weight: 700; color: var(--ink-soft); background: none; border: 1px solid #55555c; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.pip-pause:hover { color: var(--ink); border-color: var(--ink-soft); }
+.logo-hero .rebuild-note { margin: 22px auto 0; text-align: center; }
+/* Three numbers, centred on the page. */
+.stats.stats-3 { grid-template-columns: repeat(3, 1fr); max-width: calc(var(--wide) * 3 / 4); margin-left: auto; margin-right: auto; }
+@media (max-width: 560px) { .stats.stats-3 { grid-template-columns: 1fr 1fr; } }
+.takeaways { list-style: none; margin: 8px 0 0; padding: 0; }
+.takeaways li { padding: 14px 0; border-top: 1px solid var(--line); }
+.takeaways li:last-child { border-bottom: 1px solid var(--line); }
+
+/* Body text in Outfit (Google Fonts, self-hosted, variable 300 to 700). Headings stay DM Serif Text. */
+@font-face { font-family: 'Outfit'; src: url('fonts/outfit.woff2') format('woff2'); font-weight: 300 700; font-display: swap; }
+body, p, li, figcaption, dt, dd, .eyebrow, .foot-links, .slide-caption span, .slide-caption .slide-project, .button, .pip-pause, .carousel-controls, .rank li::before, .rank-title, .stat span, .rebuild-note { font-family: 'Outfit', Arial, sans-serif; }
+/* Headings in Outfit too: one typeface for the whole case study. */
+h1, h2, h3, .stat b, .slide-caption strong, .carousel-steps .slide-caption strong, .carousel-screens .slide-caption strong, .rank li { font-family: 'Outfit', Arial, sans-serif !important; font-weight: 600 !important; letter-spacing: -0.02em; }
+.stat b { font-weight: 500 !important; }
+.rank li { font-weight: 500 !important; }
+/* The three takeaways as grey cards. */
+.takeaways { display: grid; gap: 12px; margin-top: 20px; }
+.takeaways li, .takeaways li:last-child { border: 0; background: var(--tint); border-radius: 12px; padding: 18px 22px; }
+.takeaways li b { display: block; margin-bottom: 4px; }
