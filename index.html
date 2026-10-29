@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Guardian × Spotify case study · Paul Tinker, product and design systems designer</title>
+<title>The Guardian × Spotify case study · Paul Tinker, Principal Product Designer · Design Systems</title>
 <meta name="description" content="What are you really into? A Guardian Labs campaign for Spotify that turned people's listening into a musical footprint, a genre catalogue and a logo of their own. around 40,000 visitors in four weeks.">
 <meta property="og:title" content="The Guardian × Spotify: What are you really into?">
 <meta property="og:description" content="An interactive campaign that turned Spotify listening into a musical footprint of your own, to get more people using Discover Weekly.">
@@ -18,31 +18,57 @@
 <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-KJQHXD9PGP');</script>
 <link rel="icon" href="assets/favicon.png">
 <link rel="stylesheet" href="assets/case-study.css">
-<link rel="stylesheet" href="assets/guardian.css">
+<link rel="stylesheet" href="assets/guardian.css?v=2">
+<!-- paultinker 2026: content slides in on arrival (classes set before the first paint) -->
+<script>(function(h){if(matchMedia('(max-width: 700px), (max-height: 500px) and (orientation: landscape)').matches)return;h.classList.add('pt-intro');if(/[?&]via=home/.test(location.search))h.classList.add('pt-from-home');setTimeout(function(){h.classList.add('pt-go')},2500);})(document.documentElement);</script>
+<!-- pt-priority: the title's fonts and the 3D hero load first (desktop only for the 3D) -->
+<link rel="preload" href="assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="script" crossorigin href="https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.module.js" media="(min-width: 701px) and (min-height: 501px), (min-width: 701px) and (orientation: portrait)">
+<link rel="preload" as="script" crossorigin href="https://cdn.jsdelivr.net/npm/three@0.184.0/build/three.core.js" media="(min-width: 701px) and (min-height: 501px), (min-width: 701px) and (orientation: portrait)">
+<link rel="preload" as="script" crossorigin href="https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/environments/RoomEnvironment.js" media="(min-width: 701px) and (min-height: 501px), (min-width: 701px) and (orientation: portrait)">
+<link rel="preload" as="script" crossorigin href="https://cdn.jsdelivr.net/npm/three@0.184.0/examples/jsm/loaders/SVGLoader.js" media="(min-width: 701px) and (min-height: 501px), (min-width: 701px) and (orientation: portrait)">
+<link rel="stylesheet" href="/_shared/transition.css">
+<link rel="preload" as="font" type="font/woff2" href="/_shared/fonts/inter-400.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/_shared/fonts/lato-700.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/_shared/fonts/dm-serif-text.woff2" crossorigin>
+<link rel="stylesheet" href="/_shared/fonts.css">
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to the case study</a>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="https://paultinker.uk/"><span>Paul Tinker</span><small>Design Systems Product Lead</small></a>
-    <a class="back" href="https://paultinker.uk/#the-guardian">Back to portfolio</a>
+    <a class="brand" href="https://paultinker.uk/"><span>Paul Tinker</span><small>Principal Product Designer · Design Systems</small></a>
+    <a class="back back-x" href="https://paultinker.uk/#the-guardian" aria-label="Back to portfolio" title="Back to portfolio"><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
   </div>
   <div class="progress" aria-hidden="true"></div>
 </header>
 
 <main id="main">
-  <section class="intro">
+  <figure class="bleed" data-pt-scene style="--pt-scene-scale:.8"><picture><source media="(min-width: 701px) and (min-height: 501px), (min-width: 701px) and (orientation: portrait)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><img src="images/hero-phone.webp" srcset="images/hero-phone-600.webp 600w, images/hero-phone.webp 1200w" sizes="100vw" width="1200" height="1500" alt="Three phones showing the Guardian and Spotify campaign: playful pink and black screens asking what you're really into, with lists of music genres." fetchpriority="high"></picture></figure>
+
+  <section class="intro intro-head">
     <p class="eyebrow">Case study · The Guardian × Spotify</p>
     <h1>What are you really into?</h1>
     <p class="lede">An interactive campaign that turned people's Spotify listening into a musical footprint, a genre catalogue and a logo of their own, to get more of them using Discover Weekly.</p>
-    <p class="intro-p">Discover Weekly builds a personal playlist every Monday from what you listen to. Spotify wanted more people to know it existed, and needed a way to tell a wide audience that felt personal rather than like an advert. Spotify partnered with Guardian Labs, and I came up with the concept: an experience that asks one question, and lets your own listening history answer it. I was the designer and art director, from the idea through to the footprint system, the logo and every screen.</p>
-    <dl class="meta">
+    <dl class="meta meta-facts">
       <div><dt>Role</dt><dd>Concept, Design and Art Direction</dd></div>
       <div><dt>When</dt><dd>2016</dd></div>
       <div><dt>Client</dt><dd>Spotify, made by Guardian Labs</dd></div>
       <div><dt>Promoting</dt><dd>Discover Weekly</dd></div>
     </dl>
+  </section>
+
+  <section class="intro intro-more">
+    <p class="intro-p">Discover Weekly builds a personal playlist every Monday from what you listen to. Spotify wanted more people to know it existed, and needed a way to tell a wide audience that felt personal rather than like an advert. Spotify partnered with Guardian Labs, and I came up with the concept: an experience that asks one question, and lets your own listening history answer it. I was the designer and art director, from the idea through to the footprint system, the logo and every screen.</p>
+  </section>
+
+  <section class="stats stats-3" aria-label="At a glance">
+    <div class="stat"><b><small class="approx">~</small>40,000</b><span>People found out what they were really into</span></div>
+    <div class="stat"><b>4</b><span>Weeks live</span></div>
+    <div class="stat"><b>5</b><span>Genres, colours and patterns in every footprint</span></div>
   </section>
 
   <section class="logo-hero" aria-label="The campaign logo, What are you really into?, in four colour combinations">
@@ -89,7 +115,7 @@
 </svg></div>
     <div class="logo-pips">
       <button type="button" class="pip" aria-label="Colour combination 1" aria-pressed="true" data-cols="#e0946a,#e85aa8,#5be39a,#fff12f,#a1faeb"></button><button type="button" class="pip" aria-label="Colour combination 2" aria-pressed="false" data-cols="#b98be6,#ff78a8,#fac973,#5be39a,#ffa420"></button><button type="button" class="pip" aria-label="Colour combination 3" aria-pressed="false" data-cols="#6aa6f0,#a1faeb,#e0946a,#e85aa8,#fff12f"></button><button type="button" class="pip" aria-label="Colour combination 4" aria-pressed="false" data-cols="#fff12f,#b98be6,#ff78a8,#e85aa8,#6aa6f0"></button>
-      <button type="button" class="pip-pause" aria-label="Pause colour changes">Pause</button>
+      <button type="button" class="pip-pause" aria-label="Pause colour changes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     </div>
     <p class="rebuild-note">The logo takes on each person's top five genre colours.</p>
   </section>
@@ -97,20 +123,15 @@
   (() => {
     const stage = document.querySelector('.logo-stage'), pips = [...document.querySelectorAll('.pip')], pause = document.querySelector('.pip-pause');
     let i = 0, t = null;
+    const PAUSE = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>', PLAY = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z" fill="currentColor"/></svg>';
     const show = (n) => { i = n; pips[n].dataset.cols.split(',').forEach((c, k) => stage.style.setProperty('--l' + (k + 1), c)); pips.forEach((p, k) => p.setAttribute('aria-pressed', k === n)); };
-    const play = () => { stop(); t = setInterval(() => show((i + 1) % pips.length), 2800); pause.textContent = 'Pause'; pause.setAttribute('aria-label', 'Pause colour changes'); };
-    const stop = () => { clearInterval(t); t = null; pause.textContent = 'Play'; pause.setAttribute('aria-label', 'Play colour changes'); };
+    const play = () => { stop(); t = setInterval(() => show((i + 1) % pips.length), 2800); pause.innerHTML = PAUSE; pause.setAttribute('aria-label', 'Pause colour changes'); };
+    const stop = () => { clearInterval(t); t = null; pause.innerHTML = PLAY; pause.setAttribute('aria-label', 'Play colour changes'); };
     pips.forEach((p, k) => p.addEventListener('click', () => { show(k); stop(); }));
     pause.addEventListener('click', () => (t ? stop() : play()));
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) stop(); else play();
   })();
   </script>
-
-  <section class="stats stats-3" aria-label="At a glance">
-    <div class="stat"><b>~40,000</b><span>People found out what they were really into</span></div>
-    <div class="stat"><b>4</b><span>Weeks live</span></div>
-    <div class="stat"><b>5</b><span>Genres, colours and patterns in every footprint</span></div>
-  </section>
 
   <section class="chapter text-only" id="idea">
     <div class="text rv">
@@ -130,33 +151,33 @@
       <p>Most people arrived from a friend's share or a Guardian placement, logged in once, and left with something to post. Anyone could browse the genres without logging in, but only a logged-in visitor got a footprint.</p>
     </div>
     <div class="text rv text-follow">
-      <p><b>A. Find out what you're into.</b> The main journey: one login turns a listening history into a footprint, a catalogue and a card to share.</p>
+      <p><b>Find out what you're into.</b> The main journey: one login turns a listening history into a footprint, a catalogue and a card to share.</p>
     </div>
     <figure class="carousel carousel-screens rv" aria-roledescription="carousel" aria-label="Flow A: find out what you are into">
       <div class="carousel-track" tabindex="0">
         <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 6">
           <div class="slide-media"><img class="zoom" src="images/screen-landing.jpg?v=mv054sb5" width="647" height="1401" alt="Landing screen: the logo, an invitation to log in to Spotify, Log in to start, and a footprint card reading I'm into bubble trance." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">A. Find out what you're into</span><strong>Landing</strong><span>Example footprints rotate on the card, and the logo changes colour to match each one.</span></div>
+          <div class="slide-caption"><span class="slide-project">Find out what you're into</span><strong>Landing</strong><span>Example footprints rotate on the card, and the logo changes colour to match each one.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 6">
           <div class="slide-media"><img class="zoom" src="images/screen-spotify.jpg?v=mv054sb5" width="647" height="1401" alt="Spotify login screen asking to let What are you really into? read your top artists, tracks and recently played, with Agree and continue." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">A. Find out what you're into</span><strong>Log in with Spotify</strong><span>Spotify asks permission to read the visitor's listening history.</span></div>
+          <div class="slide-caption"><span class="slide-project">Find out what you're into</span><strong>Log in with Spotify</strong><span>Spotify asks permission to read the visitor's listening history.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 6">
           <div class="slide-media"><img class="zoom" src="images/screen-reading.jpg?v=mv054sb5" width="647" height="1401" alt="Loading screen: the logo above a footprint being drawn, with the message Giving each genre a colour and a progress bar." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">A. Find out what you're into</span><strong>Reading your history</strong><span>After one Spotify login, the top five genres are found and the footprint draws itself as the logo takes on its colours.</span></div>
+          <div class="slide-caption"><span class="slide-project">Find out what you're into</span><strong>Reading your history</strong><span>After one Spotify login, the top five genres are found and the footprint draws itself as the logo takes on its colours.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 6">
           <div class="slide-media"><img class="zoom" src="images/screen-into.jpg?v=mv054sb5" width="647" height="1401" alt="Your genres: chamber pop, arab folk, louisiana blues, urban contemporary and swedish jazz over your footprint, with a Make my card button." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">A. Find out what you're into</span><strong>Here's what you're into</strong><span>Your footprint behind your top five genres, each named in its own colour.</span></div>
+          <div class="slide-caption"><span class="slide-project">Find out what you're into</span><strong>Here's what you're into</strong><span>Your footprint behind your top five genres, each named in its own colour.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="5 of 6">
           <div class="slide-media"><img class="zoom" src="images/screen-genre-mine.jpg?v=mv054sb5" width="647" height="1401" alt="Chamber pop genre page under your footprint: a description, emerged early 1990s, roots US and UK, tempo 90 to 120 BPM, and bubbles as its pattern in your footprint." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">A. Find out what you're into</span><strong>A genre of yours</strong><span>What the genre is, where it came from, and the tracks of yours that chose it, under your footprint.</span></div>
+          <div class="slide-caption"><span class="slide-project">Find out what you're into</span><strong>A genre of yours</strong><span>What the genre is, where it came from, and the tracks of yours that chose it, under your footprint.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="6 of 6">
           <div class="slide-media"><img class="zoom" src="images/screen-card.jpg?v=mv054sb5" width="647" height="1401" alt="Share card dialog: the logo, a footprint reading I'm into chamber pop, the caption What are you really into, and a Copy caption button." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">A. Find out what you're into</span><strong>Make your card</strong><span>One image with your logo, footprint and genre, plus a caption ready to post.</span></div>
+          <div class="slide-caption"><span class="slide-project">Find out what you're into</span><strong>Make your card</strong><span>One image with your logo, footprint and genre, plus a caption ready to post.</span></div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -166,25 +187,25 @@
       </div>
     </figure>
     <div class="text rv text-follow">
-      <p><b>B. Share and bring friends in.</b> Every share card is an invitation. A friend sees the post, lands on the same question, logs in and gets a footprint of their own, so the journey loops back to the start.</p>
+      <p><b>Share and bring friends in.</b> Every share card is an invitation. A friend sees the post, lands on the same question, logs in and gets a footprint of their own, so the journey loops back to the start.</p>
     </div>
     <figure class="carousel carousel-screens rv" aria-roledescription="carousel" aria-label="Flow B: share and bring friends in">
       <div class="carousel-track" tabindex="0">
         <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-card.jpg?v=mv054sb5" width="647" height="1401" alt="Share card dialog reading I'm into chamber pop, with a Copy caption button." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">B. Share and bring friends in</span><strong>Make your card</strong><span>Made from a genre page or the genre list, with a caption ready to post.</span></div>
+          <div class="slide-caption"><span class="slide-project">Share and bring friends in</span><strong>Make your card</strong><span>Made from a genre page or the genre list, with a caption ready to post.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-social.jpg?v=mv054sb5" width="647" height="1401" alt="A social post: I'm into chamber pop. What are you really into? with the share card image." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">B. Share and bring friends in</span><strong>Posted on social</strong><span>The caption asks the question back: what are you really into?</span></div>
+          <div class="slide-caption"><span class="slide-project">Share and bring friends in</span><strong>Posted on social</strong><span>The caption asks the question back: what are you really into?</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-landing.jpg?v=mv054sb5" width="647" height="1401" alt="Landing screen with the logo, Log in to start and a footprint card." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">B. Share and bring friends in</span><strong>A friend lands</strong><span>They see example footprints and the same question.</span></div>
+          <div class="slide-caption"><span class="slide-project">Share and bring friends in</span><strong>A friend lands</strong><span>They see example footprints and the same question.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-spotify.jpg?v=mv054sb5" width="647" height="1401" alt="Spotify login screen asking to let What are you really into? read your top artists, tracks and recently played, with Agree and continue." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">B. Share and bring friends in</span><strong>They log in</strong><span>And get a footprint of their own, which starts the first flow again.</span></div>
+          <div class="slide-caption"><span class="slide-project">Share and bring friends in</span><strong>They log in</strong><span>And get a footprint of their own, which starts the first flow again.</span></div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -194,25 +215,25 @@
       </div>
     </figure>
     <div class="text rv text-follow">
-      <p><b>C. Browse without logging in.</b> Genre pages work for everyone, but only your own top five genres show your footprint. Every other genre page is plain.</p>
+      <p><b>Browse without logging in.</b> Genre pages work for everyone, but only your own top five genres show your footprint. Every other genre page is plain.</p>
     </div>
     <figure class="carousel carousel-screens rv" aria-roledescription="carousel" aria-label="Flow C: browse without logging in">
       <div class="carousel-track" tabindex="0">
         <div class="slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-popular.jpg?v=mv054sb5" width="647" height="1400" alt="Start exploring: a few genres to try before logging in, permanent wave, chamber pop, indie r&amp;b, neo-psychedelic and metropopolis." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">C. Browse without logging in</span><strong>Start exploring</strong><span>Example genres to start with, linked from the landing page, no login needed.</span></div>
+          <div class="slide-caption"><span class="slide-project">Browse without logging in</span><strong>Start exploring</strong><span>Example genres to start with, linked from the landing page, no login needed.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-genre-plain.jpg?v=mv054sb5" width="647" height="1400" alt="Permanent wave genre page without a footprint: a description, emerged late 1970s, roots UK and US, tempo 110 to 150 BPM." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">C. Browse without logging in</span><strong>A genre page</strong><span>No footprint here. Just the genre, what it is and where to start listening.</span></div>
+          <div class="slide-caption"><span class="slide-project">Browse without logging in</span><strong>A genre page</strong><span>No footprint here. Just the genre, what it is and where to start listening.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="3 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-explore.jpg?v=mv054sb5" width="647" height="1400" alt="The end of a genre page: three tracks to start with, Open playlist, and chips for other genres." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">C. Browse without logging in</span><strong>Keep exploring</strong><span>Chips link sideways to other genres, also without a footprint.</span></div>
+          <div class="slide-caption"><span class="slide-project">Browse without logging in</span><strong>Keep exploring</strong><span>Chips link sideways to other genres, also without a footprint.</span></div>
         </div>
         <div class="slide" role="group" aria-roledescription="slide" aria-label="4 of 4">
           <div class="slide-media"><img class="zoom" src="images/screen-spotify.jpg?v=mv054sb5" width="647" height="1400" alt="Spotify login screen asking to let What are you really into? read your top artists, tracks and recently played, with Agree and continue." loading="lazy" decoding="async"></div>
-          <div class="slide-caption"><span class="slide-project">C. Browse without logging in</span><strong>Log in to get yours</strong><span>The way to a footprint is always through your own listening.</span></div>
+          <div class="slide-caption"><span class="slide-project">Browse without logging in</span><strong>Log in to get yours</strong><span>The way to a footprint is always through your own listening.</span></div>
         </div>
       </div>
       <div class="carousel-controls">
@@ -250,13 +271,14 @@
 
 <footer class="foot">
   <nav class="foot-links" aria-label="Contact and links">
-    <a href="#" class="to-top">Back to top ↑</a>
     <a href="https://paultinker.uk/#the-guardian">Back to portfolio</a>
     <a href="https://www.linkedin.com/in/paultinker/">LinkedIn</a>
     <a href="https://drive.google.com/file/d/1yZDxT7tIeJI6uo1lH3eONTze7y4aqznz/view?usp=sharing">Download CV (PDF)</a>
     <a href="mailto:hello@paultinker.uk">hello@paultinker.uk</a>
+    <a href="#" class="to-top">Back to top ↑</a>
   </nav>
 </footer>
 <script src="assets/case-study.js"></script>
+<script src="/_shared/transition.js" defer></script>
 </body>
 </html>

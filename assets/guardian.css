@@ -88,3 +88,8 @@ h1, h2, h3, .stat b, .slide-caption strong, .carousel-steps .slide-caption stron
 .takeaways { display: grid; gap: 12px; margin-top: 20px; }
 .takeaways li, .takeaways li:last-child { border: 0; background: var(--tint); border-radius: 12px; padding: 18px 22px; }
 .takeaways li b { display: block; margin-bottom: 4px; }
+/* Pause / play as an icon button, matching the other case studies (Paul 2026-10-29) */
+.pip-pause { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; color: var(--ink); border-color: #55555c; font-size: 0; }
+.pip-pause:hover { background: #1c1c20; border-color: var(--ink-soft); }
+.pip-pause svg { width: 14px; height: 14px; }
+.pip-pause:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
